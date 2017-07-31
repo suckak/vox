@@ -1,0 +1,126 @@
+.app{
+    display: flex;
+}
+
+.welcome__holder{
+    height: 100%;
+}
+
+.welcome__text{
+    align-items: center;
+    font-size: 72px;
+    font-weight: 100;
+    background: -webkit-linear-gradient(0deg, #64e2ee, #a7e508);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.menu{
+    background-color: #1E2020;
+    color: #8d9b9d;
+    display: inline-block;
+    height: 100vh;
+}
+
+.menu ul{
+    padding: 0;
+}
+
+.menu li{
+    text-align: center;
+    height: 70px;
+    width: 90px;
+    list-style: none;
+    padding: 0 2px;
+}
+
+.menu .option{
+    cursor: pointer;
+}
+
+.menu .selected{
+    background-color: #00afbf;
+    color: #FFF;
+    transition: all .5s ease;
+    border-color: #FFFFFF;
+}
+
+.vxf_logo{
+    height: 28px;
+    width: 45px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.unseen{
+    height: 17px;
+    color: #FFF;
+    line-height: 15px;
+    background-color: #00afbf;
+    border-radius: 36%;
+    border: 1px solid #FFF;
+    padding: 0px 5px;
+    font-size: 10px;
+    position: absolute;
+    right: 25px;
+    top: 5px;
+    text-align: center;
+}
+
+#chart1-container {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 800px;
+    height: 800px;
+    background-color: #fff;
+}
+
+.section{
+    flex-grow: 1;
+    text-align: center;
+}
+
+.menu__text,.menu__img{
+    display: block;
+}
+
+.menu__text{
+    font-size: 12px;
+}
+
+.menu__img{
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.user{
+    position: relative;
+}
+
+.user__avatar{
+    display: block;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #8d9b9d;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.selected .user__avatar{
+    border-color: #FFFFFF;
+    transition: all .5s ease;
+}
+
+.timeline{
+    width: 510px;
+}
