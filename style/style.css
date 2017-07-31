@@ -74,7 +74,12 @@
     text-align: center;
 }
 
+.chart__holder{
+    text-align: center;
+}
+
 #chart1-container {
+    text-align: center;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -122,5 +127,86 @@
 }
 
 .timeline{
+    height: 100vh;
     width: 510px;
+    border-right: 1px solid #cccccc;
+}
+
+.timeline ul{
+    padding: 0;
+}
+
+.timeline li{
+    list-style: none;
+}
+
+.searchbar{
+    border:none;
+    font-weight: 400;
+    font-size: 14px;
+    height: 40px;
+    width: 100%;
+    background: url('../public/assets/search_icon.png') no-repeat scroll 30px 11px;
+    padding-left:55px;
+    margin-bottom: 3px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.searchbar:focus{
+    outline: none;
+}
+
+.searchbar::placeholder{
+    color: #b3babb;
+}
+
+.dot__holder{
+    padding: 0;
+}
+
+.dot::before{
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    top: 14px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #00afbf;
+}
+
+.tweet{
+    padding: 28px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.tweet:hover,.tweet.selected{
+    background-color: #f5f9fa;
+    border-right: 4px solid #00afbf;
+    transition: all .5s ease;
+}
+
+.tweet .avatar{
+    height:28px;
+    width: 28px;
+    border-radius: 5px;
+}
+
+.tweet__info{
+    color: #cccccc;
+    font-size: 12px;
+    display: block;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.feed{
+    display: flex;
+}
+
+.tweetDetail{
+    flex-grow: 1;
 }

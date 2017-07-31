@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {BarChart, Bar} from 'recharts';
 
+import brand from '../../public/assets/logo.png';
 
 class TweetDetail extends Component {
 
@@ -22,10 +23,24 @@ class TweetDetail extends Component {
 
     render(){
         const tweet = this.props.tweet;
-        console.log(tweet);
+        const campaign = this.props.campaign;
+        console.log(campaign);
         return(
-            <div>
-                {this.barChart(tweet)}
+            <div className="container">
+                <div className="row">
+                    <div className="col-xs-2">
+                        <img src={brand} alt=""/>
+                    </div>
+                    <div className="col-xs-10">
+                        <p >{campaign.brand}</p>
+                        <p>{campaign.groupAd}</p>
+                    </div>
+                </div>
+                <div className="row chart__holder">
+                  <div className="col-xs-12">
+                      {this.barChart(tweet)}
+                  </div>
+                </div>
             </div>
         );
     }

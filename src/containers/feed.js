@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import { getTweets,selectTweet,markTweet } from "../actions/index";
-import Tweet from '../components/tweet';
+import Tweet from './tweet';
 import TweetDetail from '../components/tweetDetail';
 
 class Feed extends Component {
@@ -35,7 +35,7 @@ class Feed extends Component {
         if(tweets) {
             return  tweets.map((tweet, index) =>{
                 return (
-                    <li className="list-group-item" key={index} onClick={this.onClickTweet.bind(this,tweet)}>
+                    <li className="" key={index} onClick={this.onClickTweet.bind(this,tweet)}>
                         <Tweet tweet={tweet}/>
                     </li>
                 );
@@ -45,10 +45,12 @@ class Feed extends Component {
 
     renderDetail(){
         const selectedTweet = this.props.selectedTweet;
-        if(selectedTweet){
+        const campaigns = this.props.campaigns;
+        if(selectedTweet&&campaigns){
+            const campaign = campaigns[selectedTweet.campaignId];
             return (
-                <div>
-                    <TweetDetail tweet={selectedTweet}/>
+                <div className="tweetDetail">
+                    <TweetDetail tweet={selectedTweet} campaign={campaign}/>
                 </div>
             );
         }
@@ -69,10 +71,13 @@ class Feed extends Component {
 
     render() {
         return (
-            <div>
+            <div className="feed">
                 <div className="timeline">
-                    <input type="text" value={this.state.searchTerm} onChange={this.filterTweets.bind(this)}/>
-                    <ul className="list-group">
+                    <input type="text" value={this.state.searchTerm}
+                           placeholder="Buscar..."
+                           className="searchbar"
+                           onChange={this.filterTweets.bind(this)}/>
+                    <ul className="">
                         {this.renderTweets()}
                     </ul>
                 </div>
@@ -85,6 +90,7 @@ class Feed extends Component {
 function mapStateToProps(state){
     return {
         tweets : state.appData.tweets,
+        campaigns : state.appData.campaigns,
         selectedTweet : state.flow.selectedTweet
     };
 }

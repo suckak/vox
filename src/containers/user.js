@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import { getUser } from "../actions/index";
+import {getAvatarURL} from "../utils/utils";
 
 class User extends Component {
 
@@ -10,9 +11,6 @@ class User extends Component {
         this.props.getUser();
     }
 
-    getAvatarURL(img){
-        return `public/assets/${img}`;
-    }
 
     renderUnseen(unseen){
         if(unseen.length>0){
@@ -27,7 +25,7 @@ class User extends Component {
             return (
                 <div className="user">
                     <div className="menu__img">
-                        <img className="user__avatar" src={this.getAvatarURL(user.avatarUrl)} alt=""/>
+                        <img className="user__avatar" src={getAvatarURL(user.avatarUrl)} alt=""/>
                     </div>
                     <p className="menu__text">{user.name}</p>
                     {this.renderUnseen(unseen)}

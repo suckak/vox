@@ -100,7 +100,7 @@ const APP_DATA = {
 
 const INITIAL_STATE = {
     tweets : [],
-    campaigns: [],
+    campaigns: null,
     user : null,
     unseen : APP_DATA.tweets.map(tweet => tweet._id)
 };
