@@ -24,7 +24,6 @@ class TweetDetail extends Component {
     render(){
         const tweet = this.props.tweet;
         const campaign = this.props.campaign;
-        console.log(campaign);
         return(
             <div className="container">
                 <div className="row">
