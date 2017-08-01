@@ -27,7 +27,7 @@ class User extends Component {
                     <div className="menu__img">
                         <img className="user__avatar" src={getAvatarURL(user.avatarUrl)} alt=""/>
                     </div>
-                    <p className="menu__text">{user.name}</p>
+                    <p className="menu__text">{user.name.toUpperCase()}</p>
                     {this.renderUnseen(unseen)}
                 </div>
             );

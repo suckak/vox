@@ -12,8 +12,8 @@ class TweetDetail extends Component {
         ];
 
          return (
-             <BarChart width={70} height={150} data={data}
-                       margin={{top: 20, right: 30, left: 20, bottom: 5}}>
+             <BarChart width={55} height={300} data={data}
+                       margin={{top: 0, right: 0, left: 30, bottom: 20}}>
                  <Bar dataKey="unique" stackId="a" fill="#0C6972" />
                  <Bar dataKey="payed" stackId="a" fill="#148C98" />
                  <Bar dataKey="total" stackId="a" fill="#1CAFBE" />
@@ -21,25 +21,26 @@ class TweetDetail extends Component {
          );
     }
 
+
+
     render(){
         const tweet = this.props.tweet;
         const campaign = this.props.campaign;
         return(
             <div className="container">
                 <div className="row">
-                    <div className="col-xs-2">
-                        <img src={brand} alt=""/>
-                    </div>
-                    <div className="col-xs-10">
-                        <p >{campaign.brand}</p>
-                        <p>{campaign.groupAd}</p>
+                    <div className="col-md-12 text-left">
+                        <img className="detail__brand" src={brand} alt=""/>
+                        <p className="detail__name">{campaign.brand} <br/> <span className="detail__group">{campaign.groupAd}</span> </p>
                     </div>
                 </div>
+                <span className="divider">CANTIDAD Y TIPOS DE CLICK</span>
                 <div className="row chart__holder">
                   <div className="col-xs-12">
                       {this.barChart(tweet)}
                   </div>
                 </div>
+                <span className="divider">IMPACTO VIRAL</span>
             </div>
         );
     }

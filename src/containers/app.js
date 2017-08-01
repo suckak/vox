@@ -15,9 +15,11 @@ class App extends Component {
 
     render() {
         return (
-            <div className="app">
-                <Menu/>
-                <div className="section">
+            <div className="app container-fluid">
+                <div className="col-md-1 sidebar">
+                    <Menu/>
+                </div>
+                <div className="section col-md-11">
                     {this.renderSection()}
                 </div>
             </div>

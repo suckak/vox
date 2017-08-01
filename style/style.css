@@ -1,5 +1,17 @@
+body{
+    /*background: url("../public/assets/bg_app.png") 0 0 no-repeat;
+    background-size: cover;
+    opacity: .5;*/
+}
+
 .app{
-    display: flex;
+    padding: 0;
+}
+
+.sidebar{
+    padding: 0;
+    width: 6.333333%;
+    min-width: 91px;
 }
 
 .welcome__holder{
@@ -22,6 +34,7 @@
 }
 
 .menu{
+    width: 100%;
     background-color: #1E2020;
     color: #8d9b9d;
     display: inline-block;
@@ -34,10 +47,15 @@
 
 .menu li{
     text-align: center;
-    height: 70px;
-    width: 90px;
+    height: 80px;
+    padding-top: 13px;
+    width: 100%;
     list-style: none;
-    padding: 0 2px;
+}
+
+.menu li.logo{
+    height: 103px;
+    padding-top: 0;
 }
 
 .menu .option{
@@ -52,8 +70,8 @@
 }
 
 .vxf_logo{
-    height: 28px;
-    width: 45px;
+    height: 33px;
+    width: auto;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -66,11 +84,11 @@
     background-color: #00afbf;
     border-radius: 36%;
     border: 1px solid #FFF;
-    padding: 0px 5px;
+    padding: 0px 6px;
     font-size: 10px;
     position: absolute;
-    right: 25px;
-    top: 5px;
+    right: 23px;
+    top: -7px;
     text-align: center;
 }
 
@@ -90,8 +108,9 @@
 }
 
 .section{
-    flex-grow: 1;
     text-align: center;
+    padding: 0;
+    width: 93.666667%;
 }
 
 .menu__text,.menu__img{
@@ -100,11 +119,13 @@
 
 .menu__text{
     font-size: 12px;
+    padding-top: 6px;
 }
 
 .menu__img{
     margin: 0 auto;
-    padding-top: 10px;
+    height: 33px;
+    width: auto;
 }
 
 .user{
@@ -113,12 +134,13 @@
 
 .user__avatar{
     display: block;
-    height: 30px;
-    width: 30px;
+    height: 31px;
+    width: auto;
     border: 1px solid #8d9b9d;
     border-radius: 50%;
     padding: 0;
     margin: 0 auto;
+    margin-top: 9px;
 }
 
 .selected .user__avatar{
@@ -127,13 +149,16 @@
 }
 
 .timeline{
+    border-right: 2px solid #cccccc;
     height: 100vh;
-    width: 510px;
-    border-right: 1px solid #cccccc;
+    overflow: hidden;
+    width: 43.5%;
 }
 
 .timeline ul{
     padding: 0;
+    height: 90%;
+    overflow-y: scroll;
 }
 
 .timeline li{
@@ -142,14 +167,15 @@
 
 .searchbar{
     border:none;
-    font-weight: 400;
+    font-weight: 700;
+    font-style: italic;
     font-size: 14px;
-    height: 40px;
+    height: 45px;
     width: 100%;
-    background: url('../public/assets/search_icon.png') no-repeat scroll 30px 11px;
-    padding-left:55px;
+    background: url('../public/assets/search_icon.png') no-repeat scroll 35px 16px;
+    padding-left:11%;
     margin-bottom: 3px;
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 2px solid #cccccc;
 }
 
 .searchbar:focus{
@@ -169,7 +195,7 @@
     display: inline-block;
     width: 10px;
     height: 10px;
-    top: 14px;
+    margin-top: 11px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -177,26 +203,45 @@
 }
 
 .tweet{
-    padding: 28px;
-    border-bottom: 1px solid #cccccc;
+    padding: 34px;
+    border-bottom: 2px solid #cccccc;
+    border-right: 4px solid #FFF;
+}
+
+.tweet .text-left{
+    padding: 0 8px;
 }
 
 .tweet:hover,.tweet.selected{
     background-color: #f5f9fa;
-    border-right: 4px solid #00afbf;
     transition: all .5s ease;
+    border-right-color: #00afbf;
 }
 
 .tweet .avatar{
-    height:28px;
-    width: 28px;
+    height:35px;
+    width: auto;
     border-radius: 5px;
 }
 
+.avatar__holder{
+    padding: 0;
+    text-align: left;
+}
+
+.avatar__brand{
+    height: 18px;
+    position: absolute;
+    right: 5px;
+    top: 21px;
+}
+
 .tweet__info{
-    color: #cccccc;
-    font-size: 12px;
+    color: #a1b1b3;
+    font-size: 14px;
+    margin-top: -5px;
     display: block;
+    font-weight: 400;
 }
 
 .text-left{
@@ -209,4 +254,64 @@
 
 .tweetDetail{
     flex-grow: 1;
+    overflow: hidden;
+    padding-top: 2.5%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+a{
+    color: #00afbf;
+}
+
+.detail__brand{
+    height: 55px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.detail__name{
+    display: inline-block;
+    padding-left: 16px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.detail__group{
+    color: #778182;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.divider{
+    padding: 3% 0;
+    color: #414849;
+    display: block;
+    font-weight: 600;
+    overflow: hidden;
+    text-align: center;
+    font-size: 14px;
+}
+.divider:before, .divider:after {
+    background-color: #dfdfdf;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+.divider:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+.divider:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+.recharts-wrapper{
+    margin: 0 auto;
 }

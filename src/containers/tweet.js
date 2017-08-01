@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Linkify from 'react-linkify';
+import brandLogo from '../../public/assets/logo.png';
 
 import {getCampaigns} from "../actions/index";
 import {getAvatarURL} from "../utils/utils";
@@ -12,12 +13,18 @@ class Tweet extends Component {
         this.props.getCampaigns();
     }
 
-    isSelected(tweet){
-        if(this.props.selectedTweet==null){
+    isSelected(id){
+        if(this.props.selectedTweet===null){
             return 'container tweet';
         }
 
-        return this.props.selectedTweet._id === tweet._id ? 'container tweet selected' : 'container tweet';
+        return this.props.selectedTweet._id === id ? 'container tweet selected' : 'container tweet';
+    }
+
+    isNew(id){
+        if(this.props.unseen.indexOf(id)!=-1){
+            return <span className="dot"></span>;
+        }
     }
 
     render(){
@@ -30,19 +37,20 @@ class Tweet extends Component {
             const campaign = campaigns[tweet.campaignId];
 
             return(
-                <div className={this.isSelected(tweet)}>
+                <div className={this.isSelected(tweet._id)}>
                     <div className="row">
                         <div className="col-xs-1 dot__holder">
-                            <span className="dot"></span>
+                            {this.isNew(tweet._id)}
                         </div>
-                        <div className="col-xs-1">
+                        <div className="col-xs-1 avatar__holder">
                             <div className="tweet__avatar">
                                 <img className="avatar" src={getAvatarURL(user.avatarUrl)} alt=""/>
                             </div>
+                            <img className="avatar__brand" src={brandLogo} alt=""/>
                         </div>
                         <div className="col-xs-10 text-left">
                             <span className="tweet__info">
-                                {`${campaign.brand} . ${campaign.groupAd} . ${tweet.date}`}
+                                {campaign.brand}  &#183;  {campaign.groupAd}  &#183;  {tweet.date}
                             </span>
                             <Linkify hashtag="twitter">{tweet.content}</Linkify>
                         </div>

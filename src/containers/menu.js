@@ -23,7 +23,7 @@ class Menu extends Component {
         return(
             <nav className="nav menu">
                 <ul>
-                    <li>
+                    <li className="logo">
                         <img className="vxf_logo" src={logo} alt=""/>
                     </li>
                     <li className={this.isSelected(appSections.start)}
