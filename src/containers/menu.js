@@ -15,7 +15,9 @@ class Menu extends Component {
     }
 
     isSelected(section){
-        return section === this.props.section ? 'selected option' : 'option';
+        if(section === this.props.section){
+            return 'selected';
+        }
     }
 
     render(){
@@ -23,7 +25,7 @@ class Menu extends Component {
         return(
             <nav className="nav menu">
                 <ul>
-                    <li className="logo">
+                    <li className="logo" onClick={this.changeSection.bind(this,appSections.start)}>
                         <img className="vxf_logo" src={logo} alt=""/>
                     </li>
                     <li className={this.isSelected(appSections.start)}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BarChart, Bar} from 'recharts';
+import {BarChart, Bar, Tooltip} from 'recharts';
 
 import brand from '../../public/assets/logo.png';
 
@@ -14,9 +14,14 @@ class TweetDetail extends Component {
          return (
              <BarChart width={55} height={300} data={data}
                        margin={{top: 0, right: 0, left: 30, bottom: 20}}>
-                 <Bar dataKey="unique" stackId="a" fill="#0C6972" />
-                 <Bar dataKey="payed" stackId="a" fill="#148C98" />
-                 <Bar dataKey="total" stackId="a" fill="#1CAFBE" />
+                 <Bar dataKey="unique" stackId="a" fill="#0C6972" class="chart__top" />
+
+                 <Tooltip content={(
+                     <span className="data__top"> <span>267</span> clicks totatel (<a href="#">?</a>)</span>
+                 )}/>
+
+                 <Bar dataKey="payed" stackId="a" fill="#148C98" class="chart__middle" />
+                 <Bar dataKey="total" stackId="a" fill="#1CAFBE" class="chart__bottom" />
              </BarChart>
          );
     }

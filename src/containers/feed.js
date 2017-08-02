@@ -35,7 +35,7 @@ class Feed extends Component {
         if(tweets) {
             return  tweets.map((tweet, index) =>{
                 return (
-                    <li className="" key={index} onClick={this.onClickTweet.bind(this,tweet)}>
+                    <li className="tweet__holder" key={index} onClick={this.onClickTweet.bind(this,tweet)}>
                         <Tweet tweet={tweet}/>
                     </li>
                 );

@@ -46,6 +46,7 @@ body{
 }
 
 .menu li{
+    cursor: pointer;
     text-align: center;
     height: 80px;
     padding-top: 13px;
@@ -56,10 +57,6 @@ body{
 .menu li.logo{
     height: 103px;
     padding-top: 0;
-}
-
-.menu .option{
-    cursor: pointer;
 }
 
 .menu .selected{
@@ -87,7 +84,7 @@ body{
     padding: 0px 6px;
     font-size: 10px;
     position: absolute;
-    right: 23px;
+    margin-left: 2%;
     top: -7px;
     text-align: center;
 }
@@ -149,7 +146,7 @@ body{
 }
 
 .timeline{
-    border-right: 2px solid #cccccc;
+    border-right: 1px solid #cccccc;
     height: 100vh;
     overflow: hidden;
     width: 43.5%;
@@ -174,8 +171,7 @@ body{
     width: 100%;
     background: url('../public/assets/search_icon.png') no-repeat scroll 35px 16px;
     padding-left:11%;
-    margin-bottom: 3px;
-    border-bottom: 2px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
 }
 
 .searchbar:focus{
@@ -202,9 +198,12 @@ body{
     background-color: #00afbf;
 }
 
+.tweet__holder{
+    border-bottom: 1px solid #cccccc;
+}
+
 .tweet{
     padding: 34px;
-    border-bottom: 2px solid #cccccc;
     border-right: 4px solid #FFF;
 }
 
@@ -232,7 +231,7 @@ body{
 .avatar__brand{
     height: 18px;
     position: absolute;
-    right: 5px;
+    margin-left: 50%;
     top: 21px;
 }
 
@@ -314,4 +313,28 @@ a{
 
 .recharts-wrapper{
     margin: 0 auto;
+}
+.timeline li:first-of-type::before{
+    content: '';
+    display: block;
+    height: 3px;
+    width: 100%;
+    position: relative;
+    background-color: #F6F6F6;
+}
+
+.chart__top{
+    content: '267';
+    position: absolute;
+
+}
+
+.recharts-tooltip-wrapper{
+    visibility: visible !important;
+    position: relative;
+    transform: none !important;
+}
+
+.recharts-rectangle.recharts-tooltip-cursor{
+    display: none !important;
 }

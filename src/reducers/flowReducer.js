@@ -1,7 +1,7 @@
 import { actionTypes,appSections } from "../utils/constants";
 
 const INITIAL_STATE = {
-    section : appSections.start,
+    section : appSections.feed,
     selectedTweet: null
 };
 
