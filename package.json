@@ -1,11 +1,11 @@
 {
   "name": "voxfeed-frontend-test",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "Front End Test for voxfeed",
   "main": "index.js",
-  "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
+  "repository": "https://github.com/suckak/vox",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start": "webpack-dev-server --inline --port 8080 --host 192.168.1.88 --content-base .",
     "prod": "NODE_ENV=production node server.js",
     "postinstall": "webpack -p",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
