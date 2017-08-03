@@ -22,8 +22,23 @@ class Tweet extends Component {
     }
 
     isNew(id){
-        if(this.props.unseen.indexOf(id)!=-1){
-            return <span className="dot"></span>;
+        if(this.props.unseen.indexOf(id)!==-1){
+            return (<span className="dot"></span>);
+        }
+    }
+
+    renderTweetInfo(campaign){
+        const tweet = this.props.tweet;
+        if(campaign){
+            return (<span>{campaign.brand}  &#183;  {campaign.groupAd}  &#183;  {tweet.date}</span>);
+        }else{
+            return tweet.date;
+        }
+    }
+
+    renderBrandImage(campaign){
+        if(campaign){
+            return (<img className="avatar__brand" src={brandLogo} alt=""/>);
         }
     }
 
@@ -34,7 +49,7 @@ class Tweet extends Component {
 
         if(tweet&&user&&campaigns){
 
-            const campaign = campaigns[tweet.campaignId];
+            const campaign = campaigns[tweet.campaignId] || null;
 
             return(
                 <div className={this.isSelected(tweet._id)}>
@@ -46,11 +61,11 @@ class Tweet extends Component {
                             <div className="tweet__avatar">
                                 <img className="avatar" src={getAvatarURL(user.avatarUrl)} alt=""/>
                             </div>
-                            <img className="avatar__brand" src={brandLogo} alt=""/>
+                            {this.renderBrandImage(campaign)}
                         </div>
                         <div className="col-xs-10 text-left">
                             <span className="tweet__info">
-                                {campaign.brand}  &#183;  {campaign.groupAd}  &#183;  {tweet.date}
+                                {this.renderTweetInfo(campaign)}
                             </span>
                             <Linkify hashtag="twitter">{tweet.content}</Linkify>
                         </div>

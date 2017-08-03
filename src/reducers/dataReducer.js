@@ -25,7 +25,7 @@ const APP_DATA = {
         }, {
             "_id": 1,
             "userId": 1,
-            "campaignId": 1,
+            "campaignId": 0,
             "date": "19 Oct 2014",
             "content": "Just #coding stuff... http://instagram.com/p/uENgADtakT/",
             "results": {
@@ -61,26 +61,6 @@ const APP_DATA = {
             "entities": {
                 "hashtags": ["#MiCombiSqualo"],
                 "urls": ["voxfd.co/1zhZIZp"]
-            }
-        }, {
-            "_id": 3,
-            "userId": 1,
-            "campaignId": 1,
-            "date": "18 Oct 2014",
-            "content": "Ni modo que no empieze la escuela con un smartphone chipocludo!! #TelcelBackToSchool vxfd.co/wef32",
-            "results": {
-                "clicks": {
-                    "total": 256,
-                    "unique": 200,
-                    "payed": 145
-                },
-                "retweets": 2138,
-                "replys": 478
-
-            },
-            "entities": {
-                "hashtags": ["#TelcelBackToSchool"],
-                "urls": ["voxfd.co/wef32"]
             }
         }, {
             "_id": 3,

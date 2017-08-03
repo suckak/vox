@@ -3,6 +3,7 @@ body{
     background: url("../public/assets/1.png") 0 0 no-repeat;
     background-size: cover;
     opacity: .5;*/
+    font-family: 'Open Sans', sans-serif;
 }
 
 .app{
@@ -21,15 +22,16 @@ body{
 }
 
 .welcome__text{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     align-items: center;
     font-size: 72px;
-    font-weight: 100;
-    background: -webkit-linear-gradient(0deg, #64e2ee, #a7e508);
+    font-weight: 200;
+    background: -webkit-linear-gradient(0deg, #16d4e6 0%, #4DD679 70%,#61cb19 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
     position: relative;
-    top: 50%;
+    top: 45%;
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -62,7 +64,7 @@ body{
 }
 
 .menu .selected{
-    background-color: #00afbf;
+    background-color: #16d4e6;
     color: #FFF;
     transition: all .5s ease;
     border-color: #FFFFFF;
@@ -80,7 +82,7 @@ body{
     height: 17px;
     color: #FFF;
     line-height: 15px;
-    background-color: #00afbf;
+    background-color: #16d4e6;
     border-radius: 36%;
     border: 1px solid #FFF;
     padding: 0px 6px;
@@ -198,7 +200,7 @@ body{
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    background-color: #00afbf;
+    background-color: #16d4e6;
 }
 
 .tweet__holder{
@@ -217,7 +219,7 @@ body{
 .tweet:hover,.tweet.selected{
     background-color: #f5f9fa;
     transition: all .5s ease;
-    border-right-color: #00afbf;
+    border-right-color: #16d4e6;
 }
 
 .tweet .avatar{
@@ -263,7 +265,7 @@ body{
 }
 
 a{
-    color: #00afbf;
+    color: #16d4e6;
 }
 
 .detail__brand{
@@ -418,4 +420,17 @@ a{
         width: 100%;
         height: 100vh;
     }
+
+    .tweet{
+        padding: 15px 8% 15px 10px;
+    }
+
+    .tweet .text-left {
+        padding: 0 15px;
+    }
+
+    .avatar__brand {
+        margin-left: 70%;
+    }
+
 }

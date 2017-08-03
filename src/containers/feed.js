@@ -47,7 +47,7 @@ class Feed extends Component {
         const selectedTweet = this.props.selectedTweet;
         const campaigns = this.props.campaigns;
         if(selectedTweet&&campaigns){
-            const campaign = campaigns[selectedTweet.campaignId];
+            const campaign = campaigns[selectedTweet.campaignId] || campaigns[1];
             return (
                 <div className="tweetDetail">
                     <TweetDetail tweet={selectedTweet} campaign={campaign}/>
