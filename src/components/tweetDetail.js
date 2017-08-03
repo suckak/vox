@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 import {BarChart, Bar, Tooltip} from 'recharts';
 
 import brand from '../../public/assets/logo.png';
+import {setTitle} from "../actions/index";
 
 class TweetDetail extends Component {
 
@@ -26,6 +29,9 @@ class TweetDetail extends Component {
          );
     }
 
+    componentDidMount(){
+        this.props.setTitle(this.props.campaign.brand);
+    }
 
 
     render(){
@@ -51,4 +57,10 @@ class TweetDetail extends Component {
     }
 }
 
-export default TweetDetail;
+function mapDispatchToProps(dispatch){
+    return {
+        setTitle : bindActionCreators(setTitle,dispatch)
+    };
+}
+
+export default connect(null,mapDispatchToProps)(TweetDetail);

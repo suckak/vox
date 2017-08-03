@@ -32,3 +32,10 @@ export const markTweet = (id) => {
         payload : id
     };
 };
+
+export const setTitle = (title) => {
+    return {
+        type : actionTypes.SET_TITLE,
+        payload : title
+    };
+};

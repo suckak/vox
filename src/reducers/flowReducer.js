@@ -2,7 +2,8 @@ import { actionTypes,appSections } from "../utils/constants";
 
 const INITIAL_STATE = {
     section : appSections.feed,
-    selectedTweet: null
+    selectedTweet: null,
+    title : appSections.feed.name
 };
 
 const flowReducer = (state = INITIAL_STATE, action) => {
@@ -10,7 +11,8 @@ const flowReducer = (state = INITIAL_STATE, action) => {
         case actionTypes.CHANGE_SECTION:
             return {
                 ...state,
-                section : action.payload
+                section : action.payload,
+                title : action.payload.name
             };
             break;
 
@@ -18,6 +20,13 @@ const flowReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 selectedTweet : action.payload
+            };
+            break;
+
+        case actionTypes.SET_TITLE:
+            return {
+                ...state,
+                title:action.payload
             };
             break;
         default:

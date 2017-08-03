@@ -1,11 +1,13 @@
 body{
     /*background: url("../public/assets/bg_app.png") 0 0 no-repeat;
+    background: url("../public/assets/1.png") 0 0 no-repeat;
     background-size: cover;
     opacity: .5;*/
 }
 
 .app{
     padding: 0;
+    display: flex;
 }
 
 .sidebar{
@@ -105,6 +107,7 @@ body{
 }
 
 .section{
+    flex-grow: 1;
     text-align: center;
     padding: 0;
     width: 93.666667%;
@@ -170,7 +173,7 @@ body{
     height: 45px;
     width: 100%;
     background: url('../public/assets/search_icon.png') no-repeat scroll 35px 16px;
-    padding-left:11%;
+    padding-left:4.6em;
     border-bottom: 1px solid #cccccc;
 }
 
@@ -337,4 +340,82 @@ a{
 
 .recharts-rectangle.recharts-tooltip-cursor{
     display: none !important;
+}
+
+.mobile{
+    display: none;
+}
+
+@media(max-device-width: 500px){
+
+    body{
+        overflow: hidden;
+    }
+
+    .app{
+        overflow: hidden;
+    }
+
+    .mobile{
+        display: inherit;
+    }
+
+    .sidebar{
+        position: absolute;
+        left: -91px;
+        transition: all ease .3s;
+    }
+
+    .sidebar.active{
+        left: 0;
+        transition: all ease .3s;
+    }
+
+    .section{
+        transition: all ease .3s;
+    }
+
+    .section.move{
+        transition: all ease .3s;
+        transform: translateX(91px);
+    }
+
+    header.mobile{
+        display: grid;
+        background-color: #F0F0F0;
+        border-bottom: 1px solid #d4d4d4;
+    }
+
+    h1{
+        font-weight: 400;
+        font-size: 1.3em;
+        padding: .9em;
+        margin: 0;
+    }
+    
+    .icon_holder{
+        position: absolute;
+    }
+
+    .icon_holder img{
+        height: 1em;
+        margin: 1.3em;
+    }
+
+    .icon_holder span{
+        margin-left: -.5em;
+        font-size: .9em;
+    }
+
+    .timeline{
+        width: 100%;
+    }
+
+    .tweetDetail{
+        display: block;
+        position: absolute;
+        background: white;
+        width: 100%;
+        height: 100vh;
+    }
 }

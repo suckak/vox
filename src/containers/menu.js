@@ -11,6 +11,7 @@ import { appSections } from "../utils/constants";
 class Menu extends Component {
 
     changeSection(val){
+        this.props.toggleMenu();
         this.props.changeSection(val);
     }
 

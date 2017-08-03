@@ -4,10 +4,17 @@ export const actionTypes  = {
     GET_USER : 'GET_USER',
     CHANGE_SECTION : 'CHANGE_SECTION',
     SELECT_TWEET : 'SELECT_TWEET',
-    MARK_TWEET : 'MARK_TWEET'
+    MARK_TWEET : 'MARK_TWEET',
+    SET_TITLE : 'SET_TITLE'
 };
 
 export const appSections = {
-    start : 0,
-    feed : 1
+    start : {
+        id: 0,
+        name: 'INICIO'
+    },
+    feed : {
+        id: 1,
+        name: 'MESSAGES'
+    }
 };
