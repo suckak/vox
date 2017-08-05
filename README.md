@@ -1,7 +1,7 @@
 Front End Voxfeed Test
 ===
 
-####Stack
+#### Stack
 ReactJS + Redux app, Webpack como module bundler, ES6.
 
 Animaciones y transiciones con pure CSS3
