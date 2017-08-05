@@ -1,25 +1,31 @@
-# ReduxSimpleStarter
+Front End Voxfeed Test
+===
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+####Stack
+ReactJS + Redux app, Webpack como module bundler, ES6.
 
-### Getting Started
+Animaciones y transiciones con pure CSS3
 
-There are two methods for getting started with this repo.
+#### Online Deploy
+https://voxfeed-test.herokuapp.com/
 
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
+#### Run local
 
-```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
+> git clone https://github.com/suckak/vox.git
+> cd vox
+> opcional:
+    Si quieres correr el proyecto y hacerlo accesible a toda la red local,
+    cambiar en el package.json el script de start por:
+     "start": "webpack-dev-server --inline --port 8080 --host { ip de la maquina host} --content-base ."
+     asi ser? accesible desde http://{ip host}:8080
+     de lo contrario solo correra en la maquina host en http://localhost:8080
 > npm install
 > npm start
-```
 
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
 
-```
-> npm install
-> npm start
-```
+#### Librearias
+http://tasti.github.io/react-linkify/
+http://recharts.org/
+
+#### Boilerplate
+https://github.com/StephenGrider/ReduxSimpleStarter
