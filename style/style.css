@@ -205,6 +205,7 @@ body{
 
 .tweet__holder{
     border-bottom: 1px solid #cccccc;
+    cursor: pointer;
 }
 
 .tweet{
