@@ -1,9 +1,9 @@
 import { actionTypes,appSections } from "../utils/constants";
 
 const INITIAL_STATE = {
-    section : appSections.start,
+    section : appSections.feed,
     selectedTweet: null,
-    title : appSections.start.name
+    title : appSections.feed.name
 };
 
 const flowReducer = (state = INITIAL_STATE, action) => {

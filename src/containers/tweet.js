@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Linkify from 'react-linkify';
-import brandLogo from '../../public/assets/logo.png';
 
 import {getCampaigns} from "../actions/index";
-import {getAvatarURL} from "../utils/utils";
+import {getAssetsURL} from "../utils/utils";
 
 class Tweet extends Component {
 
@@ -38,7 +37,17 @@ class Tweet extends Component {
 
     renderBrandImage(campaign){
         if(campaign){
-            return (<img className="avatar__brand" src={brandLogo} alt=""/>);
+            return (<img className="avatar__brand" src={getAssetsURL(campaign.image)} alt=""/>);
+        }
+    }
+
+    renderImage(tweet){
+        if(tweet.image){
+            return (
+                <div className="tweet_img">
+                    <img src={getAssetsURL(tweet.image)} alt=""/>
+                </div>
+            );
         }
     }
 
@@ -59,7 +68,7 @@ class Tweet extends Component {
                         </div>
                         <div className="col-xs-1 avatar__holder">
                             <div className="tweet__avatar">
-                                <img className="avatar" src={getAvatarURL(user.avatarUrl)} alt=""/>
+                                <img className="avatar" src={getAssetsURL(user.avatarUrl)} alt=""/>
                             </div>
                             {this.renderBrandImage(campaign)}
                         </div>
@@ -68,9 +77,9 @@ class Tweet extends Component {
                                 {this.renderTweetInfo(campaign)}
                             </span>
                             <Linkify hashtag="twitter">{tweet.content}</Linkify>
+                            {this.renderImage(tweet)}
                         </div>
                     </div>
-
                 </div>
             );
         }else{

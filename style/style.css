@@ -1,6 +1,6 @@
 body{
     /*background: url("../public/assets/bg_app.png") 0 0 no-repeat;
-    background: url("../public/assets/1.png") 0 0 no-repeat;
+    /*background: url("../public/assets/1.png") 0 0 no-repeat;
     background-size: cover;
     opacity: .5;*/
     font-family: 'Open Sans', sans-serif;
@@ -236,9 +236,12 @@ body{
 
 .avatar__brand{
     height: 18px;
+    width: 18px;
+    border-radius: 50%;
     position: absolute;
     margin-left: 50%;
     top: 21px;
+    border: 1px solid white;
 }
 
 .tweet__info{
@@ -347,6 +350,14 @@ a{
 
 .mobile{
     display: none;
+}
+
+.tweet_img img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 1em;
+    margin-top: 7px;
+
 }
 
 @media(max-device-width: 800px){

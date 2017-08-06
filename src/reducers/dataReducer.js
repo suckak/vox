@@ -6,6 +6,7 @@ const APP_DATA = {
             "_id": 0,
             "userId": 1,
             "campaignId": 1,
+            "image":"msg_img.png",
             "date": "19 Oct 2014",
             "content": "En #MiCombiSqualo, haría las mejores fiestas del mundo. ¿Te quieres ganar la tuya? voxfd.co/ZK69Es",
             "results": {
@@ -65,8 +66,9 @@ const APP_DATA = {
         }, {
             "_id": 3,
             "userId": 1,
-            "campaignId": 1,
+            "campaignId": 2,
             "date": "18 Oct 2014",
+            "image":"img-telcel.png",
             "content": "Ni modo que no empieze la escuela con un smartphone chipocludo!! #TelcelBackToSchool vxfd.co/wef32",
             "results": {
                 "clicks": {
@@ -87,7 +89,13 @@ const APP_DATA = {
     "campaigns": {
         "1": {
             "brand": "Squalo",
-            "groupAd": "Squalo Lifestyle"
+            "groupAd": "Squalo Lifestyle",
+            "image" : "logo.png"
+        },
+        "2": {
+            "brand": "Telcel",
+            "groupAd": "Telcel Campaign",
+            "image": "logo_telcel.png"
         }
     },
     "user": {

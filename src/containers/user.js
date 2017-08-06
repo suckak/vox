@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import { getUser } from "../actions/index";
-import {getAvatarURL} from "../utils/utils";
+import {getAssetsURL} from "../utils/utils";
 
 class User extends Component {
 
@@ -25,7 +25,7 @@ class User extends Component {
             return (
                 <div className="user">
                     <div className="menu__img">
-                        <img className="user__avatar" src={getAvatarURL(user.avatarUrl)} alt=""/>
+                        <img className="user__avatar" src={getAssetsURL(user.avatarUrl)} alt=""/>
                     </div>
                     <p className="menu__text">{user.name.toUpperCase()}</p>
                     {this.renderUnseen(unseen)}

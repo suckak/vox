@@ -3,8 +3,8 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import {BarChart, Bar, Tooltip} from 'recharts';
 
-import brand from '../../public/assets/logo.png';
 import {setTitle} from "../actions/index";
+import {getAssetsURL} from "../utils/utils";
 
 class TweetDetail extends Component {
 
@@ -41,7 +41,7 @@ class TweetDetail extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 text-left">
-                        <img className="detail__brand" src={brand} alt=""/>
+                        <img className="detail__brand" src={getAssetsURL(campaign.image)} alt=""/>
                         <p className="detail__name">{campaign.brand} <br/> <span className="detail__group">{campaign.groupAd}</span> </p>
                     </div>
                 </div>
