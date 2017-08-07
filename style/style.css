@@ -63,7 +63,7 @@ body{
     padding-top: 0;
 }
 
-.menu .selected{
+.menu .selected, .menu li:hover{
     background-color: #16d4e6;
     color: #FFF;
     transition: all .5s ease;
@@ -338,14 +338,61 @@ a{
 
 }
 
+.barchart{
+    position: relative;
+}
+
+.recharts-wrapper{
+    width: 100% !important;
+    position: relative;
+}
+
 .recharts-tooltip-wrapper{
     visibility: visible !important;
-    position: relative;
+    position: relative !important;
     transform: none !important;
 }
 
 .recharts-rectangle.recharts-tooltip-cursor{
     display: none !important;
+}
+
+.data__top, .data__middle, .data__bottom{
+    position: absolute;
+    width: max-content;
+}
+
+.data__top{
+    left: 55%;
+    top: 56px;
+}
+
+.data__middle{
+    left: 55%;
+    top: 145px;
+}
+
+.data__bottom{
+    left: 11%;
+    top: 266px;
+}
+
+.data__top:before,.data__middle:before{
+    content: '';
+    display: inline-block;
+    width: 100px;
+    background-color: #cccccc;
+    height: 1px;
+    margin-bottom: 4px;
+}
+
+.data__bottom::after{
+    content: '';
+    display: inline-block;
+    width: 100px;
+    background-color: #cccccc;
+    height: 1px;
+    margin-bottom: 4px;
 }
 
 .mobile{
@@ -386,11 +433,11 @@ a{
     }
 
     .section{
-        transition: all ease .3s;
+        transition: all ease .4s;
     }
 
     .section.move{
-        transition: all ease .3s;
+        transition: all ease .2s;
         transform: translateX(91px);
     }
 
@@ -431,6 +478,10 @@ a{
         width: 100%;
     }
 
+    .timeline ul{
+        height: 85%;
+    }
+
     .tweetDetail{
         left: 0;
         display: block;
@@ -450,6 +501,33 @@ a{
 
     .avatar__brand {
         margin-left: 70%;
+    }
+
+    .data__top, .data__middle, .data__bottom{
+        font-size: 12px;
+    }
+
+    .data__top:before,.data__middle:before{
+        width: 20px;
+    }
+
+    .data__bottom::after{
+        width: 20px;
+    }
+
+    .data__top{
+        left: 60%;
+        top: 60px;
+    }
+
+    .data__middle{
+        left: 60%;
+        top: 150px;
+    }
+
+    .data__bottom{
+        left: 8%;
+        top: 270px;
     }
 
 }

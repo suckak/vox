@@ -15,17 +15,20 @@ class TweetDetail extends Component {
         ];
 
          return (
-             <BarChart width={55} height={300} data={data}
-                       margin={{top: 0, right: 0, left: 30, bottom: 20}}>
-                 <Bar dataKey="unique" stackId="a" fill="#0C6972" class="chart__top" />
+             <div className="barchart">
+                 <BarChart width={55} height={300} data={data}
+                           margin={{top: 0, right: 0, left: 30, bottom: 20}}>
+                     <Bar dataKey="unique" stackId="a" fill="#0C6972" class="chart__top" />
+                     <Bar dataKey="payed" stackId="a" fill="#148C98" class="chart__middle" />
+                     <Bar dataKey="total" stackId="a" fill="#1CAFBE" class="chart__bottom" />
+                 </BarChart>
 
-                 <Tooltip content={(
-                     <span className="data__top"> <span>267</span> clicks totatel (<a href="#">?</a>)</span>
-                 )}/>
+                 <span className="data__top"> <b>{clicks.total}</b> clicks totales (<a href="#">?</a>)</span>
 
-                 <Bar dataKey="payed" stackId="a" fill="#148C98" class="chart__middle" />
-                 <Bar dataKey="total" stackId="a" fill="#1CAFBE" class="chart__bottom" />
-             </BarChart>
+                 <span className="data__middle"> <b>{clicks.payed}</b> clicks ùnicos (<a href="#">?</a>)</span>
+                 <span className="data__bottom"> <b>{clicks.payed}</b> clicks pagados (<a href="#">?</a>)</span>
+
+             </div>
          );
     }
 
