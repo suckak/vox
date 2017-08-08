@@ -8,6 +8,23 @@ import {getAssetsURL} from "../utils/utils";
 
 class TweetDetail extends Component {
 
+    constructor(){
+        super();
+        this.state = {
+            showed : false
+        };
+    }
+
+    triggerAnimation(){
+        setTimeout(()=>{
+            this.setState({showed:true});
+        },250);
+    }
+
+    showed(){
+        return this.state.showed ? 'showed' : '';
+    }
+
     barChart(tweet){
         const clicks = tweet.results.clicks;
         const data = [
@@ -23,10 +40,10 @@ class TweetDetail extends Component {
                      <Bar dataKey="total" stackId="a" fill="#1CAFBE" class="chart__bottom" />
                  </BarChart>
 
-                 <span className="data__top"> <b>{clicks.total}</b> clicks totales (<a href="#">?</a>)</span>
+                 <span className={`data__top ${this.showed()}`}> <b>{clicks.total}</b> clicks totales (<a href="#">?</a>)</span>
 
-                 <span className="data__middle"> <b>{clicks.payed}</b> clicks ùnicos (<a href="#">?</a>)</span>
-                 <span className="data__bottom"> <b>{clicks.payed}</b> clicks pagados (<a href="#">?</a>)</span>
+                 <span className={`data__middle ${this.showed()}`}> <b>{clicks.payed}</b> clicks ùnicos (<a href="#">?</a>)</span>
+                 <span className={`data__bottom ${this.showed()}`}> <b>{clicks.payed}</b> clicks pagados (<a href="#">?</a>)</span>
 
              </div>
          );
@@ -34,6 +51,7 @@ class TweetDetail extends Component {
 
     componentDidMount(){
         this.props.setTitle(this.props.campaign.brand);
+        this.triggerAnimation();
     }
 
 

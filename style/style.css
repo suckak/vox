@@ -360,21 +360,34 @@ a{
 .data__top, .data__middle, .data__bottom{
     position: absolute;
     width: max-content;
+    top: 270px;
 }
 
 .data__top{
     left: 55%;
-    top: 56px;
 }
 
 .data__middle{
     left: 55%;
-    top: 145px;
 }
 
 .data__bottom{
     left: 11%;
+}
+
+.data__top.showed{
+    top: 56px;
+    transition: all ease 1.5s;
+}
+
+.data__middle.showed{
+    top: 145px;
+    transition: all ease 1.5s;
+}
+
+.data__bottom.showed{
     top: 266px;
+    transition: all ease .5s;
 }
 
 .data__top:before,.data__middle:before{
@@ -505,6 +518,7 @@ a{
 
     .data__top, .data__middle, .data__bottom{
         font-size: 12px;
+        top: 280px;
     }
 
     .data__top:before,.data__middle:before{
@@ -516,17 +530,26 @@ a{
     }
 
     .data__top{
-        left: 60%;
-        top: 60px;
+        left: 195px;
     }
 
     .data__middle{
-        left: 60%;
-        top: 150px;
+        left: 195px;
     }
 
     .data__bottom{
-        left: 8%;
+        left: 30px;
+    }
+
+    .data__top.showed{
+        top: 60px;
+    }
+
+    .data__middle.showed{
+        top: 150px;
+    }
+
+    .data__bottom.showed{
         top: 270px;
     }
 
