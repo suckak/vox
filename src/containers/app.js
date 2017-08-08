@@ -59,7 +59,6 @@ class App extends Component {
     }
 
     render() {
-        console.log(this.props.section);
         if(this.props.section){
             return (
                 <div className="app container-fluid">

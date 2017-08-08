@@ -5,6 +5,7 @@ import {BarChart, Bar, Tooltip} from 'recharts';
 
 import {setTitle} from "../actions/index";
 import {getAssetsURL} from "../utils/utils";
+import Counter  from "../components/counter";
 
 class TweetDetail extends Component {
 
@@ -40,10 +41,10 @@ class TweetDetail extends Component {
                      <Bar dataKey="total" stackId="a" fill="#1CAFBE" class="chart__bottom" />
                  </BarChart>
 
-                 <span className={`data__top ${this.showed()}`}> <b>{clicks.total}</b> clicks totales (<a href="#">?</a>)</span>
+                 <span className={`data__top ${this.showed()}`}> <Counter value={clicks.total}/> clicks totales (<a href="#">?</a>)</span>
 
-                 <span className={`data__middle ${this.showed()}`}> <b>{clicks.payed}</b> clicks ùnicos (<a href="#">?</a>)</span>
-                 <span className={`data__bottom ${this.showed()}`}> <b>{clicks.payed}</b> clicks pagados (<a href="#">?</a>)</span>
+                 <span className={`data__middle ${this.showed()}`}> <Counter value={clicks.unique}/> clicks únicos (<a href="#">?</a>)</span>
+                 <span className={`data__bottom ${this.showed()}`}> <Counter value={clicks.payed}/> clicks pagados (<a href="#">?</a>)</span>
 
              </div>
          );
