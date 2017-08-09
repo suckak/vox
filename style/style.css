@@ -386,8 +386,8 @@ a{
 }
 
 .data__bottom.showed{
-    top: 266px;
-    transition: all ease .5s;
+    top: 197px;
+    transition: all ease 1.5s;
 }
 
 .data__top:before,.data__middle:before{
@@ -550,7 +550,7 @@ a{
     }
 
     .data__bottom.showed{
-        top: 270px;
+        top: 203px;
     }
 
 }
